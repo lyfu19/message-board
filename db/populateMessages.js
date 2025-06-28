@@ -8,7 +8,10 @@ if (!connectionString) {
 }
 
 const client = new Client({
-  connectionString: connectionString
+  connectionString: connectionString,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 const SQL = `
