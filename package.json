@@ -3,21 +3,27 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed:local": "node db/populateMessages.js",
+    "seed:prod": "node db/populateMessages.js $DATABASE_URL"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dotenv": "^17.0.0",
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
   },
   "devDependencies": {
+    "nodemon": "^3.1.10",
     "prettier": "^3.5.3"
   },
   "engines": {
-  "node": ">=18"
-}
+    "node": ">=18"
+  }
 }
